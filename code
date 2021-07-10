@@ -1,0 +1,59 @@
+*/
+February 2021
+Write a program that reads three integer numbers and prints true if the first number is between the second and the third ones (inclusive). 
+Otherwise, it is to print false. The second number is always less than the third one. Use ranges to solve the problem.
+----------------------------------------------------------------------------------------
+fun main() {
+    val (a, b, c) = List(3) { readLine()!!.toInt() }
+    println(a in b..c)
+}
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+February 2021
+Working with strings - The information about a person
+Write a program that reads the first name, the last name and the age of a person and then prints the information as in the examples below.
+To solve this problem, use string templates.
+----------------------------------------------------------------------------------------
+fun main() {
+    val (name, surname, age) = readLine()!!.split(" ")
+    println("${name.first()}. $surname, $age years old")
+}
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+March 2021
+Declaring classes - Composition
+Please, write these two classes:
+OperatingSystem with a single String property name.
+DualBoot with two OperatingSystem properties primaryOs and secondaryOs.
+All the properties are to support reassignment. You can use whichever default values you want.
+----------------------------------------------------------------------------------------
+data class OperatingSystem(var name: String = "name")
+
+data class DualBoot(
+    var primaryOs: OperatingSystem = OperatingSystem("Mac"),
+    var secondaryOs: OperatingSystem = OperatingSystem("Win")
+)
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+May 2021
+For loop and arrays - Cyclically shifting elements
+Write a program that reads an A array of integers and cyclically shifts the elements of the array to the right: 
+A[0] goes to the place of A[1], A[1] becomes A[2], ..., and the last element goes to the place of A[0]).
+The first line of the input contains the number of elements in the array.
+The other lines contain the elements of the array.
+The output contains all the shifted elements of the array in a single line. Separate the elements by one space character.
+----------------------------------------------------------------------------------------
+fun main() {
+    val size = readLine()!!.toInt()
+    val array = IntArray(size)
+
+    for (i in 0..array.lastIndex) {
+        array[i] = readLine()!!.toInt()
+    }
+    print(array.last())
+    for (i in 0 until array.lastIndex) {
+        print(" ${array[i]}")
+    }
+}
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
